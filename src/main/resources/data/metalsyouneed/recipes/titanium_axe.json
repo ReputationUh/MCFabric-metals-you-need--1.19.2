@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "metalsyouneed:iron_rod"
+    },
+    "T": {
+      "item": "metalsyouneed:titanium_ingot"
+    }
+  },
+  "pattern": [
+    "TT",
+    "T#",
+    " #"
+  ],
+  "result": {
+    "item": "metalsyouneed:titanium_axe"
+  }
+}
