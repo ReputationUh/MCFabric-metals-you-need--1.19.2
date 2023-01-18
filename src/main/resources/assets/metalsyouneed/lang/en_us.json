@@ -1,0 +1,25 @@
+{
+  "itemGroup.metalsyouneed.titanium": "Metals You Need!",
+
+
+  "item.metalsyouneed.raw_titanium": "Raw Titanium",
+  "item.metalsyouneed.titanium_ingot": "Titanium Ingot",
+  "item.metalsyouneed.iron_rod": "Iron Rod",
+  "item.metalsyouneed.titanium_pickaxe": "Titanium Pickaxe",
+  "item.metalsyouneed.titanium_sword": "Titanium Sword",
+  "item.metalsyouneed.titanium_shovel": "Titanium Shovel",
+  "item.metalsyouneed.titanium_axe": "Titanium Axe",
+  "item.metalsyouneed.titanium_hoe": "Titanium Hoe",
+  "item.metalsyouneed.aluminium_ingot": "Aluminium Ingot",
+  "item.metalsyouneed.bauxite": "Bauxite",
+
+
+  "block.metalsyouneed.titanium_block": "Titanium Block",
+  "block.metalsyouneed.titanium_ore": "Titanium Ore",
+  "block.metalsyouneed.deepslate_titanium_ore": "Deepslate Titanium Ore",
+  "block.metalsyouneed.raw_titanium_block": "Raw Titanium Block",
+  "block.metalsyouneed.bauxite_ore": "Bauxite Ore",
+  "block.metalsyouneed.deepslate_bauxite_ore": "Deepslate Bauxite Ore",
+  "block.metalsyouneed.aluminium_block": "Aluminium Block",
+  "block.metalsyouneed.bauxite_block": "Bauxite Block"
+}

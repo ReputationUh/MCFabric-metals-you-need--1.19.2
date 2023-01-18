@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "metalsyouneed:raw_titanium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "metalsyouneed:raw_titanium"
+  }
+}
