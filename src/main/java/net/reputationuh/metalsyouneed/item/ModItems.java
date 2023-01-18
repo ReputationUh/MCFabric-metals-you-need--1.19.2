@@ -66,6 +66,15 @@ public class ModItems {
             new SwordItem(ModToolMaterial.ALUMINIUM, 3, -2.4f,
                     new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
 
+    public static final Item STEEL_INGOT = registerItem("steel_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
+
+    public static final Item IRON_POWDER = registerItem("iron powder",
+            new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
+
+    public static final Item CARBON_POWDER = registerItem("carbon powder",
+            new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
+
 
 
 
