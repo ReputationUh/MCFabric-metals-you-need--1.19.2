@@ -13,6 +13,13 @@
   "item.metalsyouneed.aluminium_ingot": "Aluminium Ingot",
   "item.metalsyouneed.bauxite": "Bauxite",
 
+  "item.metalsyouneed.aluminium_pickaxe": "Aluminium Pickaxe",
+  "item.metalsyouneed.aluminium_sword": "Aluminium Sword",
+  "item.metalsyouneed.aluminium_shovel": "Aluminium Shovel",
+  "item.metalsyouneed.aluminium_axe": "Aluminium Axe",
+  "item.metalsyouneed.aluminium_hoe": "Aluminium Hoe",
+
+
 
   "block.metalsyouneed.titanium_block": "Titanium Block",
   "block.metalsyouneed.titanium_ore": "Titanium Ore",

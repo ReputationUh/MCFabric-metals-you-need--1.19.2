@@ -1,4 +1,7 @@
 {
+  "itemGroup.metalsyouneed.titanium": "你所需的元素!",
+
+
   "item.metalsyouneed.raw_titanium": "粗钛",
   "item.metalsyouneed.titanium_ingot": "钛锭",
   "item.metalsyouneed.iron_rod": "铁棒",
@@ -10,7 +13,14 @@
   "item.metalsyouneed.aluminium_ingot": "铝锭",
   "item.metalsyouneed.bauxite": "铝土矿",
 
-  "itemGroup.metalsyouneed.titanium": "你所需的元素!",
+  "item.metalsyouneed.aluminium_pickaxe": "铝镐",
+  "item.metalsyouneed.aluminium_sword": "铝剑",
+  "item.metalsyouneed.aluminium_shovel": "铝锹",
+  "item.metalsyouneed.aluminium_axe": "铝斧",
+  "item.metalsyouneed.aluminium_hoe": "铝锄",
+
+
+
   "block.metalsyouneed.titanium_block": "钛块",
   "block.metalsyouneed.titanium_ore": "钛矿石",
   "block.metalsyouneed.deepslate_titanium_ore": "深层钛矿石",

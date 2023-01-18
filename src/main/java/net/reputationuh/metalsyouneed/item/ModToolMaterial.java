@@ -1,4 +1,6 @@
 package net.reputationuh.metalsyouneed.item;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -7,8 +9,9 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial{
     TITANIUM(3, 2100, 8.5F, 2.0F, 15,
-            () -> Ingredient.ofItems(ModItems.TITANIUM));
-
+            () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.TITANIUM})),
+    ALUMINIUM(2, 200, 5.0F, 2.0F, 14,
+            () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.ALUMINIUM_INGOT}));
     private final int miningLevel;
     private final int itemDurability;
     private final float miningSpeed;

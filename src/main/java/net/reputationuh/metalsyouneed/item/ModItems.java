@@ -24,7 +24,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
 
     public static final Item TITANIUM_PICKAXE = registerItem("titanium_pickaxe",
-            new ModPickaxeItem(ModToolMaterial.TITANIUM, 2, 0f,
+            new ModPickaxeItem(ModToolMaterial.TITANIUM, 2, -2.8f,
                     new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
 
     public static final Item TITANIUM_AXE = registerItem("titanium_axe",
@@ -45,8 +45,25 @@ public class ModItems {
     public static final Item BAUXITE = registerItem("bauxite",
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
+
+    public static final Item ALUMINIUM_SHOVEL = registerItem("aluminium_shovel",
+            new ShovelItem(ModToolMaterial.ALUMINIUM, 1.5f, -3f,
+                    new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
+
     public static final Item ALUMINIUM_PICKAXE = registerItem("aluminium_pickaxe",
-            new ModPickaxeItem(ModToolMaterial.TITANIUM, 2, 0f,
+            new ModPickaxeItem(ModToolMaterial.ALUMINIUM, 0, -2.8f,
+                    new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
+
+    public static final Item ALUMINIUM_AXE = registerItem("aluminium_axe",
+            new ModAxeItem(ModToolMaterial.ALUMINIUM, 5.5f, -3f,
+                    new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
+
+    public static final Item ALUMINIUM_HOE = registerItem("aluminium_hoe",
+            new ModHoeItem(ModToolMaterial.ALUMINIUM, -2, 0f,
+                    new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
+
+    public static final Item ALUMINIUM_SWORD = registerItem("aluminium_sword",
+            new SwordItem(ModToolMaterial.ALUMINIUM, 3, -2.4f,
                     new FabricItemSettings().group(ModItemGroup.TITANIUM).maxCount(1)));
 
 
