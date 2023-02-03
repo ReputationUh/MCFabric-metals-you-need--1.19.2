@@ -12,7 +12,7 @@ public enum ModToolMaterial implements ToolMaterial{
             () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.TITANIUM})),
     ALUMINIUM(2, 200, 5.0F, 2.0F, 14,
             () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.ALUMINIUM_INGOT})),
-    STEEL(2, 500, 5.0F, 2.0F, 15,
+    STEEL(3, 1500, 7.5F, 2.0F, 15,
             () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.STEEL_INGOT}));
 
     private final int miningLevel;
