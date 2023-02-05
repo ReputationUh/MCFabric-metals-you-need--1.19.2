@@ -12,13 +12,15 @@
   "item.metalsyouneed.titanium_hoe": "钛锄",
   "item.metalsyouneed.aluminium_ingot": "铝锭",
   "item.metalsyouneed.bauxite": "铝土矿",
+  "item.metalsyouneed.steel_ingot": "钢锭",
+  "item.metalsyouneed.iron_powder": "铁粉末",
+  "item.metalsyouneed.carbon_powder": "碳粉末",
 
   "item.metalsyouneed.aluminium_pickaxe": "铝镐",
   "item.metalsyouneed.aluminium_sword": "铝剑",
   "item.metalsyouneed.aluminium_shovel": "铝锹",
   "item.metalsyouneed.aluminium_axe": "铝斧",
   "item.metalsyouneed.aluminium_hoe": "铝锄",
-
 
 
   "block.metalsyouneed.titanium_block": "钛块",
@@ -28,5 +30,6 @@
   "block.metalsyouneed.bauxite_ore": "铝土矿石",
   "block.metalsyouneed.deepslate_bauxite_ore": "深层铝土矿石",
   "block.metalsyouneed.aluminium_block": "铝块",
-  "block.metalsyouneed.bauxite_block": "铝土块"
+  "block.metalsyouneed.bauxite_block": "铝土块",
+  "block.metalsyouneed.steel_block": "钢块"
 }

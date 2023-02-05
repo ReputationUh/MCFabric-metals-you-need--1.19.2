@@ -69,10 +69,10 @@ public class ModItems {
     public static final Item STEEL_INGOT = registerItem("steel_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
-    public static final Item IRON_POWDER = registerItem("iron powder",
+    public static final Item IRON_POWDER = registerItem("iron_powder",
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
-    public static final Item CARBON_POWDER = registerItem("carbon powder",
+    public static final Item CARBON_POWDER = registerItem("carbon_powder",
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
 
