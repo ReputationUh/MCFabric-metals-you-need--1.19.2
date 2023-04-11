@@ -1,6 +1,7 @@
 package net.reputationuh.metalsyouneed.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.ai.brain.task.FarmerVillagerTask;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -73,6 +74,12 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
     public static final Item CARBON_POWDER = registerItem("carbon_powder",
+            new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
+
+    public static final Item CARBON_PANEL = registerItem("carbon_panel",
+            new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
+
+    public static final Item STEEL_POWDER = registerItem("steel_powder",
             new Item(new FabricItemSettings().group(ModItemGroup.TITANIUM)));
 
 

@@ -35,6 +35,9 @@ public class ModBlocks {
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.TITANIUM);
 
+    public static final Block INDUSTRIAL_BLAST_FURNACE = registerBlock("industrial_blast_furnace",
+            new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.TITANIUM);
+
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
