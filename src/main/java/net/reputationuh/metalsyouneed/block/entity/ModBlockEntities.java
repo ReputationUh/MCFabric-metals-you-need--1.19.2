@@ -7,7 +7,7 @@ import net.reputationuh.metalsyouneed.MetalsYouNeed;
 import net.reputationuh.metalsyouneed.block.ModBlocks;
 import net.minecraft.util.Identifier;
 
-public class ModBlockEntity {
+public class ModBlockEntities {
     public static BlockEntityType<IndustrialBlastFurnaceEntity> INDUSTRIAL_BLAST_FURNACE;
 
     public static void registerBlockEntities() {
