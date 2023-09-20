@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "metalsyouneed:block/industrial_blast_furnace"
+    },
+    "facing=south": {
+      "model": "metalsyouneed:block/industrial_blast_furnace",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "metalsyouneed:block/industrial_blast_furnace",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "metalsyouneed:block/industrial_blast_furnace",
+      "y": 90
+    }
+  }
+}

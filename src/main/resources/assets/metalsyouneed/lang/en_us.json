@@ -33,5 +33,7 @@
   "block.metalsyouneed.deepslate_bauxite_ore": "Deepslate Bauxite Ore",
   "block.metalsyouneed.aluminium_block": "Aluminium Block",
   "block.metalsyouneed.bauxite_block": "Bauxite Block",
-  "block.metalsyouneed.steel_block": "Steel Block"
+  "block.metalsyouneed.steel_block": "Steel Block",
+
+  "block.metalsyouneed.industrial_blast_furnace": "Industrial Blast Furnace"
 }
