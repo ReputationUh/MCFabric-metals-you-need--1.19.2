@@ -21,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.reputationuh.metalsyouneed.MetalsYouNeed;
 import net.reputationuh.metalsyouneed.item.ModItems;
+import net.reputationuh.metalsyouneed.screen.IndustrialBlastFurnaceScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -104,6 +105,26 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
         } else {
             entity.resetProgress();
             markDirty(world, blockPos, state);
+        }
+    }
+
+    private void resetProgress() {
+        this.progress = 0;
+    }
+
+    private static void craftItems(IndustrialBlastFurnaceEntity entity) {
+        SimpleInventory inventory = new SimpleInventory(entity.size());
+        for (int i = 0; i < entity.size(); i++) {
+            inventory.setStack(i, entity.getStack(i));
+        }
+
+        if(hasRecipe(entity)) {
+            entity.removeStack(1, 1);
+
+            entity.setStack(2, new ItemStack(ModItems.RAW_TITANIUM,
+                    entity.getStack(2).getCount() + 1));
+
+            entity.resetProgress();
         }
     }
 
