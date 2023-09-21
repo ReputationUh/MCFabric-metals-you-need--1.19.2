@@ -4,6 +4,8 @@ import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.reputationuh.metalsyouneed.screen.IndustrialBlastFurnaceScreen;
 import net.reputationuh.metalsyouneed.screen.ModScreenHandlers;
+import net.minecraft.client.render.RenderLayer;
+
 
 public class MetalsYouNeedClient implements ClientModInitializer {
 

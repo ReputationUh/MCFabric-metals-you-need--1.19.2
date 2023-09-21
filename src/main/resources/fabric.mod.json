@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.reputationuh.metalsyouneed.MetalsYouNeed"
+    ],
+    "client": [
+      "net.reputationuh.metalsyouneed.MetalsYouNeedClient"
     ]
   },
   "mixins": [
