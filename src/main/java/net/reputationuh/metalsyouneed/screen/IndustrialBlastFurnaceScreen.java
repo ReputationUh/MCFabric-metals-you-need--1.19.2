@@ -9,6 +9,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.reputationuh.metalsyouneed.MetalsYouNeed;
+//import net.minecraft.
 
 public class IndustrialBlastFurnaceScreen extends HandledScreen<IndustrialBlastFurnaceScreenHandler> {
     private static final Identifier TEXTURE =

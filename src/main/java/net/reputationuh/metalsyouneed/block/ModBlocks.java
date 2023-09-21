@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.reputationuh.metalsyouneed.MetalsYouNeed;
+import net.reputationuh.metalsyouneed.block.custom.IndustrialBlastFurnaceBlock;
 import net.reputationuh.metalsyouneed.item.ModItemGroup;
 
 public class ModBlocks {
@@ -36,9 +37,11 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.TITANIUM);
 
     public static final Block INDUSTRIAL_BLAST_FURNACE = registerBlock("industrial_blast_furnace",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.TITANIUM);
+            new IndustrialBlastFurnaceBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.TITANIUM);
 
-
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registry.BLOCK, new Identifier(MetalsYouNeed.MOD_ID, name), block);
+    }
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(MetalsYouNeed.MOD_ID, name), block);
