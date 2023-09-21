@@ -6,7 +6,7 @@
   "name": "Metals You Need!",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "ReputationUh!"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.reputationuh.metalsyouneed.MetalsYouNeed"
+    ],
+    "client": [
+      "net.reputationuh.metalsyouneed.MetalsYouNeedClient"
     ]
   },
   "mixins": [

@@ -1,0 +1,11 @@
+{
+  "type": "metalsyouneed:industrial_blasting",
+  "ingredients": [
+    {
+    "item": "metalsyouneed:raw_titanium"
+    }
+  ],
+  "output": {
+    "item": "metalsyouneed:titanium_ingot"
+  }
+}

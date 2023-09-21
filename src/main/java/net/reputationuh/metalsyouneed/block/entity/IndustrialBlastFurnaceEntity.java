@@ -2,12 +2,9 @@ package net.reputationuh.metalsyouneed.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,40 +16,34 @@ import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.reputationuh.metalsyouneed.MetalsYouNeed;
-import net.reputationuh.metalsyouneed.item.ModItems;
+import net.reputationuh.metalsyouneed.recipe.IndustrialBlustingFurnaceRecipe;
 import net.reputationuh.metalsyouneed.screen.IndustrialBlastFurnaceScreenHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 70;
+    private int maxProgress = 72;
 
-    public IndustrialBlastFurnaceEntity( BlockPos pos, BlockState state) {
+    public IndustrialBlastFurnaceEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.INDUSTRIAL_BLAST_FURNACE, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
-                    case 0:
-                        return IndustrialBlastFurnaceEntity.this.progress;
-                    case 1:
-                        return IndustrialBlastFurnaceEntity.this.maxProgress;
-                    default:
-                        return 0;
+                    case 0: return IndustrialBlastFurnaceEntity.this.progress;
+                    case 1: return IndustrialBlastFurnaceEntity.this.maxProgress;
+                    default: return 0;
                 }
             }
 
             public void set(int index, int value) {
-                switch (index) {
-                    case 0:
-                        IndustrialBlastFurnaceEntity.this.progress = value;
-                        break;
-                    case 1:
-                        IndustrialBlastFurnaceEntity.this.maxProgress = value;
-                        break;
+                switch(index) {
+                    case 0: IndustrialBlastFurnaceEntity.this.progress = value; break;
+                    case 1: IndustrialBlastFurnaceEntity.this.maxProgress = value; break;
                 }
             }
 
@@ -61,7 +52,8 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
             }
         };
     }
-            @Override
+
+    @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
     }
@@ -78,7 +70,7 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
     }
 
     @Override
-    public void writeNbt(NbtCompound nbt){
+    protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("industrial_blast_furnace.progress", progress);
@@ -91,16 +83,20 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
         progress = nbt.getInt("industrial_blast_furnace.progress");
     }
 
+    private void resetProgress() {
+        this.progress = 0;
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState state, IndustrialBlastFurnaceEntity entity) {
-        if(world.isClient()){
+        if(world.isClient()) {
             return;
         }
 
-        if(hasRecipe(entity)){
+        if(hasRecipe(entity)) {
             entity.progress++;
             markDirty(world, blockPos, state);
-            if(entity.progress >= entity.maxProgress){
-                craftItems(entity);
+            if(entity.progress >= entity.maxProgress) {
+                craftItem(entity);
             }
         } else {
             entity.resetProgress();
@@ -108,20 +104,19 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
         }
     }
 
-    private void resetProgress() {
-        this.progress = 0;
-    }
-
-    private static void craftItems(IndustrialBlastFurnaceEntity entity) {
+    private static void craftItem(IndustrialBlastFurnaceEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
 
+        Optional<IndustrialBlustingFurnaceRecipe> recipe = entity.getWorld().getRecipeManager()
+                .getFirstMatch(IndustrialBlustingFurnaceRecipe.Type.INSTANCE, inventory, entity.getWorld());
+
         if(hasRecipe(entity)) {
             entity.removeStack(1, 1);
 
-            entity.setStack(2, new ItemStack(ModItems.RAW_TITANIUM,
+            entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1));
 
             entity.resetProgress();
@@ -130,21 +125,22 @@ public class IndustrialBlastFurnaceEntity extends BlockEntity implements NamedSc
 
     private static boolean hasRecipe(IndustrialBlastFurnaceEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        for ( int i = 0; i < entity.size(); i++){
+        for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
 
-        boolean hasRawMaterialInFirstSlot = entity.getStack(1).getItem() == (ModItems.RAW_TITANIUM); //Should Add More Materials Here
-        return hasRawMaterialInFirstSlot && canInsertAmountIntoOutputSlot(inventory, 1)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.RAW_TITANIUM);
-    }
+        Optional<IndustrialBlustingFurnaceRecipe> match = entity.getWorld().getRecipeManager()
+                .getFirstMatch(IndustrialBlustingFurnaceRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
+    }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
         return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
     }
-    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int count) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getMaxCount() + count;
-    }
 
+    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
+        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
+}

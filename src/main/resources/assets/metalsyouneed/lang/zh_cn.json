@@ -33,5 +33,7 @@
   "block.metalsyouneed.deepslate_bauxite_ore": "深层铝土矿石",
   "block.metalsyouneed.aluminium_block": "铝块",
   "block.metalsyouneed.bauxite_block": "铝土块",
-  "block.metalsyouneed.steel_block": "钢块"
+  "block.metalsyouneed.steel_block": "钢块",
+
+  "block.metalsyouneed.industrial_blast_furnace": "工业高炉"
 }

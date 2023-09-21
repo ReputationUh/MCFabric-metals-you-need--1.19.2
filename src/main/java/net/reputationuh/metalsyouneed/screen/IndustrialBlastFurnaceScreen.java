@@ -14,6 +14,7 @@ import net.reputationuh.metalsyouneed.MetalsYouNeed;
 public class IndustrialBlastFurnaceScreen extends HandledScreen<IndustrialBlastFurnaceScreenHandler> {
     private static final Identifier TEXTURE =
             new Identifier(MetalsYouNeed.MOD_ID, "textures/gui/industrial_blast_furnace_gui.png");
+
     public IndustrialBlastFurnaceScreen(IndustrialBlastFurnaceScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }

@@ -37,7 +37,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.TITANIUM);
 
     public static final Block INDUSTRIAL_BLAST_FURNACE = registerBlock("industrial_blast_furnace",
-            new IndustrialBlastFurnaceBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.TITANIUM);
+            new IndustrialBlastFurnaceBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool().nonOpaque()), ModItemGroup.TITANIUM);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(MetalsYouNeed.MOD_ID, name), block);

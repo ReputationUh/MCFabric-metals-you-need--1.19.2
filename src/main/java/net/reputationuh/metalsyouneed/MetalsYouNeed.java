@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 import net.reputationuh.metalsyouneed.block.ModBlocks;
 import net.reputationuh.metalsyouneed.block.entity.ModBlockEntities;
 import net.reputationuh.metalsyouneed.item.ModItems;
+import net.reputationuh.metalsyouneed.recipe.ModRecipes;
 import net.reputationuh.metalsyouneed.screen.ModScreenHandlers;
 import net.reputationuh.metalsyouneed.world.feature.ModConfiguredFeatures;
 import net.reputationuh.metalsyouneed.world.gen.ModOreGeneration;
@@ -23,10 +24,11 @@ public class MetalsYouNeed implements ModInitializer {
 		ModConfiguredFeatures.registerConfiguredFeatures();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
 		ModOreGeneration.generateOres();
 
-
 		ModBlockEntities.registerBlockEntities();
+
 		ModScreenHandlers.registerAllScreenHandlers();
 //		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 

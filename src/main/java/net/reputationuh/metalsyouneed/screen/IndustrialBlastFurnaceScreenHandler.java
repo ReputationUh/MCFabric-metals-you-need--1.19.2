@@ -16,8 +16,6 @@ public class IndustrialBlastFurnaceScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
-//    private final BlockEntity IndustrialBlastFurnaceBlockEntity;
-
     public IndustrialBlastFurnaceScreenHandler(int syncId, PlayerInventory inventory) {
         this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
     }
@@ -51,11 +49,12 @@ public class IndustrialBlastFurnaceScreenHandler extends ScreenHandler {
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
+    @Override
     public ItemStack transferSlot(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
         if (slot != null && slot.hasStack()) {
-            ItemStack originalStack = ((Slot) slot).getStack();
+            ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
             if (invSlot < this.inventory.size()) {
                 if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
@@ -74,6 +73,7 @@ public class IndustrialBlastFurnaceScreenHandler extends ScreenHandler {
 
         return newStack;
     }
+
     @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
